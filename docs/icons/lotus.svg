@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBF6EC"/>
+      <stop offset="100%" stop-color="#EEDCC4"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8999F"/>
+      <stop offset="100%" stop-color="#C8636E"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#C5A26E" stroke-width="4" stroke-opacity="0.45"/>
+  <g transform="translate(256, 275)">
+    <path d="M0 -145 C42 -90 52 -20 0 42 C-52 -20 -42 -90 0 -145 Z" fill="url(#petal)"/>
+    <path d="M-24 38 C-98 18 -135 -42 -108 -108 C-56 -88 -26 -30 -24 38 Z" fill="#E6A1A6" fill-opacity="0.88"/>
+    <path d="M24 38 C98 18 135 -42 108 -108 C56 -88 26 -30 24 38 Z" fill="#E6A1A6" fill-opacity="0.88"/>
+    <path d="M-38 48 C-118 52 -168 6 -156 -46 C-102 -38 -62 4 -38 48 Z" fill="#F0BDC0" fill-opacity="0.82"/>
+    <path d="M38 48 C118 52 168 6 156 -46 C102 -38 62 4 38 48 Z" fill="#F0BDC0" fill-opacity="0.82"/>
+    <ellipse cx="0" cy="64" rx="118" ry="16" fill="#9BB7A1" fill-opacity="0.65"/>
+  </g>
+</svg>

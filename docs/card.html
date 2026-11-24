@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#FAF6EE" />
   <title>🪷 오늘의 불경 말씀</title>
-  <link rel="icon" href="./icons/lotus.svg" type="image/svg+xml" />
+  <link rel="icon" href="./icons/icon-192.png" />
   <link rel="stylesheet" href="./css/fonts.css" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -253,16 +253,17 @@
           audioCfg = { ...audioCfg, ...(cfg.audio || {}) };
           const bgId = resolveBg(card, d, cfg.backgrounds);
           const bgTxtName = bgId.replace(/.[^.]+$/, '.data.txt');
-          let bgDataUri = '';
+          let bgUrl = './backgrounds/' + encodeURIComponent(bgId);
           try {
             const bgRes = await fetch('./backgrounds/' + encodeURIComponent(bgTxtName));
-            if (bgRes.ok) bgDataUri = (await bgRes.text()).trim();
+            if (bgRes.ok) {
+              const txt = (await bgRes.text()).trim();
+              if (txt.startsWith('data:image/')) bgUrl = txt;
+            }
           } catch {}
 
           document.title = '🪷 오늘의 법문 · ' + card.source;
-          if (bgDataUri) {
-            el.bgLayer.style.backgroundImage = 'url("' + bgDataUri + '")';
-          }
+          el.bgLayer.style.backgroundImage = 'url("' + bgUrl + '")';
 
           el.bellEmblem.classList.toggle('hidden', d.showIcon === false);
           el.quoteNumber.classList.toggle('hidden', d.showNumber === false);
@@ -286,7 +287,7 @@
 
           // 길게 꾹 눌러서 안드로이드 네이티브 사진 저장이 가능하도록 고화질 PNG 생성 연결
           window.DharmaCardCanvas.renderDharmaCardToBlob(
-            { ...card, resolvedBgUrl: bgDataUri },
+            { ...card, resolvedBgUrl: bgUrl },
             d,
             { format: 'mobile' }
           ).then((blob) => {

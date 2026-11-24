@@ -20,15 +20,15 @@
   "todayCardId": 4,
   "todayCardDate": "2026-11-24",
   "design": {
-    "fontPreset": "expo-woodblock",
-    "fontSize": "medium",
+    "fontPreset": "expo-modern",
+    "fontSize": "large",
     "lineHeight": 1.85,
     "showSeal": true,
-    "sealText": "法",
-    "showNumber": true,
+    "sealText": "慧",
+    "showNumber": false,
     "showIcon": true,
-    "bgMode": "theme",
-    "fixedBgId": "bg-01.jpg",
+    "bgMode": "fixed",
+    "fixedBgId": "bg-04.jpg",
     "textDarkness": "charcoal"
   },
   "audio": {
@@ -51,5 +51,5 @@
     "bg-11.jpg",
     "bg-12.jpg"
   ],
-  "updatedAt": "2026-11-24T10:58:58.068Z"
+  "updatedAt": "2026-11-24T12:24:19.238Z"
 }
